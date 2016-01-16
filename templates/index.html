@@ -1,0 +1,22 @@
+{% load static %}
+{% load pipeline %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    {% javascript 'js' %}
+    {% stylesheet 'css' %}
+</head>
+<body ng-app="djangular">
+    <div class="container" ng-controller="MainCtrl">
+        <div class="center">
+            <h1>Messages List</h1>                
+        </div>
+        <div ng-repeat="msg in messages" class="panel" ng-if="messages.length">
+            [[ msg.id ]] - [[ msg.text ]]
+        </div>
+    </div>
+</body>
+</html>
